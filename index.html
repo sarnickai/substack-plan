@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 10-Minute Substack Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Work+Sans:wght@400;500;600&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: a field notebook. Oat paper, moss chapter bands, clay for anything you act on. */
+  --paper: #EFE7D8;
+  --paper-2: #E5DAC6;
+  --moss: #2F3B2B;
+  --sage: #A3AD8C;
+  --clay: #B5603A;
+  --ink: #262320;
+  --muted: #6E655A;
+  --display: "Gloock", Georgia, serif;
+  --body: "Work Sans", system-ui, -apple-system, sans-serif;
+  --hand: "Nanum Pen Script", "Comic Sans MS", cursive;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+a { color: var(--clay); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+
+/* Header */
+header { padding: 56px 0 40px; }
+.tag { display: inline-block; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--muted); padding-bottom: 2px; }
+header h1 { font-size: clamp(40px, 8vw, 68px); line-height: 1.02; margin: 18px 0 14px; }
+header h1 span { color: var(--clay); }
+.lede { font-size: 19px; max-width: 34em; margin: 0; }
+.hand { font-family: var(--hand); font-size: 28px; line-height: 1.1; color: var(--clay); }
+header .hand { margin-top: 18px; transform: rotate(-2deg); display: inline-block; }
+
+/* Contents */
+.toc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 30px 0 0; padding: 0; list-style: none; }
+.toc a { display: block; height: 100%; text-decoration: none; color: var(--ink); background: var(--paper-2); border-radius: 10px; padding: 14px 16px; font-size: 15px; }
+.toc a b { display: block; font-family: var(--display); font-weight: 400; font-size: 26px; color: var(--clay); line-height: 1; margin-bottom: 6px; }
+.toc a:hover, .toc a:focus-visible { background: var(--sage); }
+
+/* Fill-in box */
+.fill { background: var(--moss); color: var(--paper); border-radius: 16px; padding: 26px 24px; margin: 8px 0 0; }
+.fill h2 { font-size: 26px; }
+.fill p { margin: 6px 0 18px; color: #D9D2C2; font-size: 15px; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+.fields .full { grid-column: 1 / -1; }
+label { display: block; font-size: 13px; font-weight: 600; letter-spacing: .04em; margin-bottom: 5px; color: #E9E1D0; }
+input, select, textarea { width: 100%; font: inherit; font-size: 15px; color: var(--ink); background: var(--paper); border: 2px solid transparent; border-radius: 8px; padding: 9px 11px; }
+textarea { min-height: 74px; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--clay); }
+.small { font-size: 13px; color: #CFC7B5; margin-top: 4px; }
+
+/* Chapters */
+section.chapter { padding: 64px 0 10px; }
+.chap-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; }
+.chap-num { font-family: var(--display); font-size: 64px; line-height: .8; color: var(--sage); }
+.chap-head h2 { font-size: clamp(30px, 5vw, 40px); line-height: 1.1; }
+.chap-intro { color: var(--muted); font-size: 18px; margin: 4px 0 26px; max-width: 34em; }
+
+/* Plan */
+.rhythm { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.rhythm div { background: var(--paper-2); border-radius: 12px; padding: 16px 16px 14px; }
+.rhythm .when { font-family: var(--hand); font-size: 26px; color: var(--clay); line-height: 1; }
+.rhythm ul, .rhythm ol { margin: 8px 0 0; padding-left: 18px; font-size: 15px; }
+.rhythm li { margin-bottom: 5px; }
+.rule { margin: 18px 0; border: 2px dashed var(--clay); border-radius: 12px; padding: 14px 18px; font-size: 17px; }
+.months { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid #CDBFA8; }
+.months li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid #CDBFA8; }
+.months b { font-family: var(--display); font-weight: 400; font-size: 21px; }
+.aside { font-family: var(--hand); font-size: 26px; color: var(--moss); margin: 22px 0 0; transform: rotate(-1deg); }
+
+/* Steps */
+.step { display: grid; grid-template-columns: 44px 1fr; gap: 14px; margin: 0 0 34px; }
+.dot { width: 40px; height: 40px; border-radius: 50%; background: var(--clay); color: var(--paper); font-family: var(--display); font-size: 21px; display: grid; place-items: center; }
+.step h3 { font-size: 24px; line-height: 1.2; margin-top: 4px; }
+.step p { margin: 8px 0; }
+.step ol { margin: 8px 0; padding-left: 20px; }
+.step li { margin-bottom: 4px; }
+.note { font-size: 15px; color: var(--muted); }
+.warn { background: var(--paper-2); border-left: 4px solid var(--clay); border-radius: 6px; padding: 10px 14px; font-size: 15px; }
+
+/* Prompt card */
+.prompt { position: relative; background: #FBF7F0; border: 1.5px solid #D4C6AE; border-radius: 14px; margin: 14px 0; box-shadow: 4px 4px 0 var(--paper-2); }
+.prompt-bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px 10px 18px; border-bottom: 1.5px solid #D4C6AE; }
+.prompt-bar span { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.copy { font: inherit; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 7px; background: var(--moss); color: var(--paper); border: 0; border-radius: 999px; padding: 7px 15px; cursor: pointer; }
+.copy:hover { background: var(--clay); }
+.copy:focus-visible { outline: 3px solid var(--clay); outline-offset: 2px; }
+.copy.done { background: var(--clay); }
+.copy svg { width: 15px; height: 15px; }
+.prompt-text { white-space: pre-wrap; padding: 16px 18px 18px; font-size: 15.5px; line-height: 1.6; margin: 0; font-family: var(--body); }
+.prompt-text mark { background: #F3D9C5; color: var(--ink); border-radius: 4px; padding: 0 3px; }
+.prompt-text .filled { background: #DCE3CC; border-radius: 4px; padding: 0 3px; }
+
+footer { margin: 70px 0 0; background: var(--moss); color: var(--paper); padding: 40px 0 48px; }
+footer .hand { color: #E8B892; font-size: 34px; }
+footer p { margin: 8px 0 0; color: #D9D2C2; font-size: 15px; }
+
+@media (max-width: 640px) {
+  .toc, .rhythm, .fields { grid-template-columns: 1fr; }
+  .months li { grid-template-columns: 1fr; gap: 2px; }
+  .chap-num { font-size: 48px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <span class="tag">The Messy Miracle · subscriber guide</span>
+  <h1>The 10-minute <span>Substack plan</span></h1>
+  <p class="lede">My 3-month plan to grow on Substack without burning out, plus the exact prompts to set it all up with Claude. Copy, paste, done.</p>
+  <div class="hand">fill in your details once, and every prompt fills itself in ↓</div>
+  <ul class="toc">
+    <li><a href="#plan"><b>1</b>My plan, on one page</a></li>
+    <li><a href="#setup"><b>2</b>Let Claude build it in Notion and your calendar</a></li>
+    <li><a href="#daily"><b>3</b>A daily list of what to comment on</a></li>
+  </ul>
+</header>
+
+<div class="wrap">
+  <div class="fill" aria-labelledby="fill-title">
+    <h2 id="fill-title">Your details</h2>
+    <p>Optional. Anything you leave empty stays as [brackets] in the prompts, so you can fill it in later.</p>
+    <div class="fields">
+      <div><label for="f-topic">What you write about</label><input id="f-topic" placeholder="e.g. starting over in your 30s"></div>
+      <div><label for="f-reader">Who you write for</label><input id="f-reader" placeholder="e.g. women building their own income"></div>
+      <div><label for="f-pubday">Your publishing day</label>
+        <select id="f-pubday"><option value="">Pick a day</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select></div>
+      <div><label for="f-time">Time for your daily 10 minutes</label><input id="f-time" type="time"></div>
+      <div><label for="f-sunday">Time for your Sunday check</label><input id="f-sunday" type="time"></div>
+      <div><label for="f-notion">Notion page to put the plan in</label><input id="f-notion" placeholder="e.g. My Substack"></div>
+      <div class="full"><label for="f-link">Your Substack link</label><input id="f-link" placeholder="e.g. yourname.substack.com"></div>
+      <div class="full"><label for="f-writers">Your 5 writers (fill this in after step 2)</label><textarea id="f-writers" placeholder="Name, link (one per line)"></textarea>
+        <div class="small">The day-90 date is worked out for you, counting from today.</div></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="chapter" id="plan">
+    <div class="chap-head"><span class="chap-num">1</span><h2>My plan</h2></div>
+    <p class="chap-intro">Ten minutes a day. Three months. One goal per month.</p>
+
+    <div class="rhythm">
+      <div><div class="when">every day · 10 min</div>
+        <ul><li>Visit your 5 writers. Leave real comments, as many as fit in 10 minutes.</li>
+        <li>Someone replies? Write their name down.</li>
+        <li>Wrote a long comment? That's tomorrow's note.</li></ul></div>
+      <div><div class="when">publishing day</div>
+        <ul><li>Reply to every comment on your post.</li></ul></div>
+      <div><div class="when">sundays · 15 min</div>
+        <ol><li>What did I actually do?</li><li>What moved?</li><li>What do I drop next week if my energy is low?</li></ol></div>
+    </div>
+
+    <div class="rule"><b>One rule:</b> don't change your bio, name or topic for 3 months.</div>
+
+    <ul class="months">
+      <li><b>Month 1</b><span>20 real people know your name.</span></li>
+      <li><b>Month 2</b><span>Keep them. Pin your best post to the top of your page, and notice who comments every week. Go lighter over Christmas, but don't stop.</span></li>
+      <li><b>Month 3</b><span>Make one small paid thing from what readers thank you for most. A template, a prompt, a setup. Put it behind the paywall of one post.</span></li>
+      <li><b>Day 90</b><span>Compare your numbers to day 1. Now you can decide what to change.</span></li>
+    </ul>
+
+    <p class="aside">If it starts to feel like a chore: do less. Keep writing.</p>
+  </section>
+
+  <section class="chapter" id="setup">
+    <div class="chap-head"><span class="chap-num">2</span><h2>Let Claude build it for you</h2></div>
+    <p class="chap-intro">I asked Claude to set this up, and it made my Notion page and put every reminder in my calendar in one go. Three steps, about 20 minutes.</p>
+
+    <div class="step"><div class="dot">1</div><div>
+      <h3>Connect Notion and Google Calendar</h3>
+      <ol><li>In Claude, click <b>Customize</b> in the left sidebar, then <b>Connectors</b>.</li>
+      <li>Search for <b>Notion</b>, click <b>Connect</b>, log in and allow access.</li>
+      <li>Do the same for <b>Google Calendar</b>.</li></ol>
+      <p class="note">You only do this once.</p>
+    </div></div>
+
+    <div class="step"><div class="dot">2</div><div>
+      <h3>Find your 5 writers</h3>
+      <p>Open a new chat in Claude and paste this:</p>
+      <div class="prompt"><div class="prompt-bar"><span>Prompt 1</span><button class="copy" data-for="p1" type="button"></button></div><pre class="prompt-text" id="p1"></pre></div>
+      <p class="warn"><b>Check every one yourself.</b> Open each profile and look at the dates. When I did this, two of Claude's first picks hadn't posted since August. Then add your 5 to "Your details" at the top.</p>
+    </div></div>
+
+    <div class="step"><div class="dot">3</div><div>
+      <h3>Let Claude build your plan and your calendar</h3>
+      <p>In the same chat, paste this:</p>
+      <div class="prompt"><div class="prompt-bar"><span>Prompt 2</span><button class="copy" data-for="p2" type="button"></button></div><pre class="prompt-text" id="p2"></pre></div>
+      <p>Claude shows you the list first. Check it, say yes, and it's done. If a time doesn't work later, just drag the event in your calendar.</p>
+    </div></div>
+  </section>
+
+  <section class="chapter" id="daily">
+    <div class="chap-head"><span class="chap-num">3</span><h2>Your daily comment list</h2></div>
+    <p class="chap-intro">This is what fixed my overwhelm. Every morning, 20 minutes before my 10 minutes, a short list of exactly where to comment lands on my phone. I open it, comment, done.</p>
+
+    <div class="step"><div class="dot">1</div><div>
+      <h3>Create the scheduled task</h3>
+      <ol><li>Open the <b>Claude desktop app</b> and click <b>Scheduled</b> in the left sidebar.</li>
+      <li>Click <b>New task</b>, then <b>Create with Claude</b>.</li>
+      <li>Paste the prompt below, answer Claude's questions, then click <b>Schedule</b>.</li>
+      <li>Turn on notifications, so the list goes to your phone.</li></ol>
+      <div class="prompt"><div class="prompt-bar"><span>Prompt 3</span><button class="copy" data-for="p3" type="button"></button></div><pre class="prompt-text" id="p3"></pre></div>
+    </div></div>
+
+    <div class="step"><div class="dot">2</div><div>
+      <h3>Test it</h3>
+      <p>Run it once straight away and check the links work.</p>
+    </div></div>
+
+    <div class="step"><div class="dot">!</div><div>
+      <h3>Good to know</h3>
+      <p><b>It never comments for you.</b> The point is real people getting to know the real you. That doesn't work if AI does the talking.</p>
+      <p class="note">It reads your writers from your Notion page every morning, so if you swap a writer there, the list follows. It checks Substack through the browser in the Claude desktop app, so the app needs to be open and your laptop on in the morning. When it isn't, just open your writers' profiles yourself.</p>
+    </div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="hand">See you in February with the numbers. Iza x</div>
+    <p>The Messy Miracle · sarnickai.substack.com</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var ids = ["topic", "reader", "pubday", "time", "sunday", "notion", "link", "writers"];
+
+  function esc(s) { return s.replace(/[&<>]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]; }); }
+  function minus20(t) {
+    var m = /^(\d{1,2}):(\d{2})$/.exec(t || ""); if (!m) return "";
+    var mins = (+m[1] * 60 + +m[2] - 20 + 1440) % 1440;
+    return String(Math.floor(mins / 60)).padStart(2, "0") + ":" + String(mins % 60).padStart(2, "0");
+  }
+  function day90() {
+    var d = new Date(); d.setDate(d.getDate() + 90);
+    return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  }
+  function vals() {
+    var v = {}; ids.forEach(function (k) { v[k] = ($("f-" + k).value || "").trim(); });
+    v.listtime = minus20(v.time); v.d90 = day90();
+    v.writers = v.writers.split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean).join("; ");
+    return v;
+  }
+  // {key|placeholder} becomes the value, or [placeholder] if empty
+  function render(tpl, v, html) {
+    return tpl.replace(/\{(\w+)\|([^}]+)\}/g, function (_, k, ph) {
+      var val = v[k];
+      if (html) return val ? '<span class="filled">' + esc(val) + '</span>' : '<mark>[' + esc(ph) + ']</mark>';
+      return val ? val : "[" + ph + "]";
+    }).replace(/[^{}]+/g, function (s) { return s; });
+  }
+  function renderHtml(tpl, v) {
+    var out = "", re = /\{(\w+)\|([^}]+)\}/g, last = 0, m;
+    while ((m = re.exec(tpl))) {
+      out += esc(tpl.slice(last, m.index));
+      out += v[m[1]] ? '<span class="filled">' + esc(v[m[1]]) + '</span>' : '<mark>[' + esc(m[2]) + ']</mark>';
+      last = re.lastIndex;
+    }
+    return out + esc(tpl.slice(last));
+  }
+
+  var T = {
+    p1: "Find 5 Substack writers who write about {topic|your topic} for {reader|who you write for}. Each one should have roughly 1,000 to 10,000 subscribers, have posted in the last 2 weeks, and have comment sections where readers reply to each other. Give me their names, links, subscriber counts and the date of their last post.",
+    p2: "I'm starting a 3-month plan to grow my Substack in 10 minutes a day. The plan: every day I leave real comments under my 5 writers' posts. Anyone who replies goes on my names list. Long comments become tomorrow's note. On publishing day I reply to every comment on my post. Every Sunday I answer 3 questions: What did I actually do? What moved? What do I drop next week if my energy is low? Month 1: 20 real people know my name. Month 2: keep them. Month 3: make one small paid thing. One rule: no changes to my bio, name or topic for 3 months.\n\nSet it up so I actually do it:\n\n1. Make a Notion page called \"3-month Substack plan\" inside {notion|your Notion page}. Sections: My 5 writers, Names list, Note bank, Sunday check, and Month 1, 2 and 3 with a checkbox for every week.\n\n2. Add my 5 writers with links: {writers|your 5 writers}.\n\n3. Add these to my Google Calendar, each with a phone reminder and a link to the Notion page:\n- \"Substack 10\" every day except {pubday|your publishing day}, at {time|time}, 10 minutes. Put that week's task in the description.\n- \"Publish day\" every {pubday|your publishing day} at {time|time}, 30 minutes.\n- \"Sunday check\" every Sunday at {sunday|time}, 15 minutes, with the 3 questions.\n- \"Day 90: now you can decide\" on {d90|date}.\n\nBefore you create anything, show me the list so I can check it.",
+    p3: "Every day at {listtime|20 minutes before your daily 10 minutes}, make my \"what to comment on\" list. I write every comment myself, so do not write, draft or post any comments, likes or restacks. Only find and list.\n\n1. Open my Notion page \"3-month Substack plan\" and read the writers in \"My 5 writers\".\n2. Check each writer on Substack for posts and notes from the last 36 hours.\n3. Check my own Substack ({link|your Substack link}) for new comments on my posts and notes from the last 36 hours.\n4. Send me up to 7 links: new posts first, then notes that already have replies, then comments on my own posts I haven't replied to.\n5. If nothing is new, say so in one line. If you can't reach Substack, send me my writers' profile links instead."
+  };
+
+  var ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+  var TICK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
+
+  function update() {
+    var v = vals();
+    Object.keys(T).forEach(function (k) { $(k).innerHTML = renderHtml(T[k], v); });
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta); return ok;
+  }
+
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.innerHTML = ICON + "Copy";
+    btn.setAttribute("aria-label", "Copy " + btn.parentNode.querySelector("span").textContent);
+    btn.addEventListener("click", function () {
+      var text = $(btn.dataset.for).innerText;
+      var done = function () {
+        btn.innerHTML = TICK + "Copied"; btn.classList.add("done");
+        setTimeout(function () { btn.innerHTML = ICON + "Copy"; btn.classList.remove("done"); }, 1800);
+      };
+      var fail = function () {
+        if (fallbackCopy(text)) { done(); return; }
+        var r = document.createRange(); r.selectNodeContents($(btn.dataset.for));
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.innerHTML = "Selected, press Ctrl+C";
+      };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fail);
+        else fail();
+      } catch (e) { fail(); }
+    });
+  });
+
+  ids.forEach(function (k) { $("f-" + k).addEventListener("input", update); $("f-" + k).addEventListener("change", update); });
+  update();
+})();
+</script>
+</body>
+</html>
